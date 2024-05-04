@@ -20,7 +20,7 @@
 }
 
 #cta .title span {
-    color: #e9a209;
+    color: var(--TSound-4);
 }
 
 #cta .description {
@@ -68,7 +68,7 @@
 
 /* parte de tras do banner */
 .shape{
-    background-color: #fff9ea;
+    background-color: var(--TSound-1);
     width: 50%;
     height: 100%;
     position: absolute;

@@ -7,7 +7,7 @@ header{
     /* para ficar na tela quando estiver passando */
     position: sticky;
     top: 0;
-    background-color: #fff9ea;
+    background-color: var(--TSound-1);
     z-index: 3;
     
 }
@@ -21,7 +21,7 @@ header{
 
 #nav-logo{
     font-size: 24px;
-    color: #e9a209;
+    color: var(--TSound-4);
 }
 
 #nav-list{
@@ -39,7 +39,7 @@ header{
 
 .nav-itens.active a {
     color: #1d1d1d;
-    border-bottom: solid 3px #ffe100;
+    border-bottom: solid 3px var(--TSound-3);
 }
 
 #mobile-btn{

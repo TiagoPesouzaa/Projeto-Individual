@@ -9,6 +9,18 @@
 @import url(testimonials.css);
 @import url(footer.css);
 
+/* criando variaveis de cores */
+:root{
+    --TSound-1 : #fff9ea;
+    --TSound-2 : #ffe8b4;
+    --TSound-3 :  #ffe100;
+    --TSound-4 :  #e9a209;
+    --TSound-5 :  ;
+
+
+
+}
+
 
 
 
@@ -20,13 +32,9 @@
     box-sizing: border-box;
 }
 
-:root{
---bejeTSound :(#fff9ea);
-}
-
 
 body{
-    background-color: #fff9ea ;
+    background-color: var(--TSound-1) ;
 }
 
 section{
@@ -79,7 +87,7 @@ background-color: #f1d68f;
 }
 
 .section-title{
-    color: #e9a209;
+    color: var(--TSound-4);
 }
 
 .section-subtitle{
