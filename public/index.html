@@ -16,10 +16,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer">
   </script>
   
-  <link rel="stylesheet" href="../public/css/menu.css">
-  <link rel="stylesheet" href="../public/css/header.css">
+ 
   <link rel="stylesheet" href="../public/css/styles.css">
-  <link rel="stylesheet" href="./css/home.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,6 +29,8 @@
 </head>
 
 <body>
+
+  <!-- Parte Navbar -->
   <header>
     <nav class="navbar">
       <i class="fa-brands fa-soundcloud" id="nav-logo">TSoundCloud</i>
@@ -86,8 +87,12 @@
 
   </header>
 
+
+<!-- Parte do main, escopo geral da CTA  -->
   <main id="content">
 
+
+    <!-- Tela Home  -->
     <section id="home">
 
       <div class="shape"></div>
@@ -137,6 +142,8 @@
 
     </section>
 
+
+    <!-- Sessão Menu -->
     <section id="menu">
       <h2 class="section-title">Cardápio</h2>
       <h3 class="section-subtitle">Nossos pratos especiais</h3>
@@ -277,11 +284,108 @@
       </div>
     </section>
 
-    <section id="testimonials">
 
+     <!-- Sessão Testmonials -->
+    <section id="testimonials">
+      <img src="../public/assets/imgs/images/chef.png" alt="" id="testimonials-chef">
+
+        <div id="testimonials-content">
+          <h2 class="section-title">
+            Depoimentos
+          </h2>
+
+          <h3 class="section-subtitle">
+            O que os clientes falam sobre nós
+          </h3>
+
+          <div id="feedbacks">
+
+            <!-- Primeiro feedback -->
+            <div class="feedback">
+              <img src="../public/assets/imgs/images/avatar.png" alt="" class="feedback-avatar">
+              <div class="feedback-content">
+                <p>
+
+                  Fulana de Tal
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+
+                </p>
+
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+
+            <!-- Segundo feedback -->
+            <div class="feedback">
+              <img src="../public/assets/imgs/images/avatar.png" alt="" class="feedback-avatar">
+              <div class="feedback-content">
+                <p>
+
+                  Fulana de Tal
+                  <span>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+
+                </p>
+
+                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
+                <p>
+                  
+                </p>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <button class="btn-default">
+            Ver mais avaliações
+          </button>
+        </div>
     </section>
   </main>
+  
+  <!-- Sessão Footer -->
+  <footer>
+    <img src="../public/assets/imgs/images/wave.svg" alt="">
 
+    <div id="footer-items">
+      <span id="copyright">
+        <!-- icone -->
+        &copy 2024 Tiago Pereira 
+      </span>
+
+      <div class="social-media-buttons">
+        <a href="">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+      
+    </div>
+
+
+  </footer>
   <!-- javascript -->
   <script src="./js/index.js"></script>
 
