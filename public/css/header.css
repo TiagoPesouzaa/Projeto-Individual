@@ -12,6 +12,17 @@ header{
     
 }
 
+header .buttons-navbar {
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 15px;
+   text-decoration: none;
+   
+}
+
+
+
 .navbar {
     width: 100%;
     display: flex;
@@ -40,6 +51,7 @@ header{
 .nav-itens.active a {
     color: var(--TSound-Neutro-1);
     border-bottom: solid 3px var(--TSound-3);
+   
 }
 
 #mobile-btn{

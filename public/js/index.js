@@ -28,14 +28,14 @@ $(document).ready(function () {
         }
 
         // para fazer a linha nos itens da navbar passarem de um lugar para o outro e fazer a página rolar de acordo com isso.
-        sections.each(function(i){
+        sections.each(function (i) {
             const section = $(this); // é a prórpia sessão que estou pegando.
             const sectionTop = section.offset().top - 96; // para saber quando que eu cheguei no topo. top - 96 (navbar)
             const sectionBottom = sectionTop + section.outerHeight(); // sessão do topo + tamanho da sessão | para saber quando chegar embaixo.
 
             // if para saber se a sessão da rolagem está dentro da área da sessão específica.
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom ){ // se a rolagem está dentro do top e do bottom.
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) { // se a rolagem está dentro do top e do bottom.
                 activeSectionIndex = i; // o activeSectionIndex está recebendo a posição da sessão (i).
                 return false; // para sair do looping.
             }
@@ -49,27 +49,27 @@ $(document).ready(function () {
     });
 
     ScrollReveal().reveal('#cta', {
-        origin : 'left',
-        duration : 2000,
-        distance : '20%',
+        origin: 'left',
+        duration: 2000,
+        distance: '20%',
     });
 
     ScrollReveal().reveal('.dish', {
-        origin : 'left',
-        duration : 2000,
-        distance : '20%',
+        origin: 'left',
+        duration: 2000,
+        distance: '20%',
     });
 
     ScrollReveal().reveal('#testimonials-chef', {
-        origin : 'left',
-        duration : 2000,
-        distance : '20%',
+        origin: 'left',
+        duration: 2000,
+        distance: '20%',
     });
 
     ScrollReveal().reveal('#feedbacks', {
-        origin : 'right',
-        duration : 2000,
-        distance : '20%',
+        origin: 'right',
+        duration: 2000,
+        distance: '20%',
     });
 });
 
