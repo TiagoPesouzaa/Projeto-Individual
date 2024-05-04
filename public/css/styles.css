@@ -15,8 +15,11 @@
     --TSound-2 : #ffe8b4;
     --TSound-3 :  #ffe100;
     --TSound-4 :  #e9a209;
-    --TSound-5 :  ;
+    --TSound-5 :  #f8d477;
+    --TSound-6 :  #ffcb45;
 
+    --TSound-Neutro-0: #fff;
+    --TSound-Neutro-1: #1d1d1d;
 
 
 }
@@ -46,7 +49,7 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffcb45;
+    background-color: var(--TSound-6);
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
@@ -73,11 +76,11 @@ background-color: #f1d68f;
     justify-content: center;
     width: 45px;
     height: 40px;
-    background-color: #fff;
+    background-color: var(--TSound-Neutro-0);
     font-size: 1.25rem;
     border-radius: 10px;
     text-decoration: none;
-    color: #1d1d1d;
+    color: var(--TSound-Neutro-1);
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1) ;
     transition: box-shadow .3s ease;
 }
