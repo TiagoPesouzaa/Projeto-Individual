@@ -20,10 +20,15 @@
 
     --TSound-Neutro-0: #fff;
     --TSound-Neutro-1: #1d1d1d;
+    
 
 
 }
 
+/* rolar a pagina suavemente */
+html{
+    scroll-behavior: smooth;
+}
 
 
 
