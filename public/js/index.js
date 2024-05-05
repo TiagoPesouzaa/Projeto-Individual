@@ -44,8 +44,8 @@ $(document).ready(function () {
         navItems.removeClass('active');
         $(navItems[activeSectionIndex]).addClass('active');
 
-        // console.log(scrollPosition) Para analisar em que posição - em número - está a rolagem (scroll);
-
+    console.log(scrollPosition); //Para analisar em que posição - em número - está a rolagem (scroll);
+ 
     });
 
     ScrollReveal().reveal('#cta', {

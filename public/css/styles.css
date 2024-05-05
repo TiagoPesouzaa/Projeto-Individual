@@ -11,12 +11,13 @@
 
 /* criando variaveis de cores */
 :root{
-    --TSound-1 : #fff9ea;
+    --TSound-1 : #38352f;
     --TSound-2 : #ffe8b4;
     --TSound-3 :  #ffe100;
     --TSound-4 :  #e9a209;
     --TSound-5 :  #f8d477;
     --TSound-6 :  #ffcb45;
+    --TSound-7: #e5e5e5;
 
     --TSound-Neutro-0: #fff;
     --TSound-Neutro-1: #1d1d1d;
