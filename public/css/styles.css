@@ -43,9 +43,9 @@ html{
 
 
 body{
-    background-color: var(--TSound-1) ;
+    background-image: url("https://i.pinimg.com/564x/bd/6c/cb/bd6ccb8958593c47db995af114cc6be6.jpg");
 }
-
+ 
 section{
     padding: 28px 8%;
 }
@@ -59,7 +59,7 @@ section{
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 2px rgba(224, 207, 207);
     cursor: pointer;
 
    transition: ease-in-out .2s;
