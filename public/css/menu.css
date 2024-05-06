@@ -58,6 +58,13 @@ overflow: hidden;
     color: var(--TSound-4);
 }
 
+#menu .section-subtitle  {
+   color: #fff;
+   border: none;
+   border-style: outset;
+   background-color: var(--TSound-1);
+}
+
 /* Responsividade */
 @media screen and (max-width : 1170px) {
     .dishes {

@@ -1,5 +1,5 @@
 footer{
-    background-color: var(--TSound-1);
+    background-color: var(--TSound-5);
 
 }
 
@@ -11,12 +11,12 @@ footer{
 }
 
 #copyright{
-    color: var(--TSound-Neutro-0);
+    color: var(--TSound-1);
     font-weight: 500;
 }
 
 footer img{
-    background-color: var(--TSound-1);
+    background-color: var(--TSound-5);
 }
 
 /* Responsividade */
