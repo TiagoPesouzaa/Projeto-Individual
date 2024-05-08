@@ -1,0 +1,15 @@
+#introduction{
+    display: flex;
+    min-height: calc(100vh - 91px);
+    position: relative;
+    background-color: var(--TSound-4);
+   
+}
+
+.space-introduction .title{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 35px;
+}
