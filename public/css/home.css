@@ -25,6 +25,7 @@
 
 #cta .description {
     font-size: 1.2rem;
+    color: var(--TSound-7);
 }
 
 #cta-buttons{
