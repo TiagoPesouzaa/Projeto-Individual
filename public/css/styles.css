@@ -72,7 +72,7 @@ section{
     color: var(--TSound-2);
    }
    
-   .btn-default::after, .btn::before {
+   .btn-default::after, .btn-default::before {
     content: '';
     display: block;
     height: 100%;
