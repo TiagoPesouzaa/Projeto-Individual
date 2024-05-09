@@ -277,16 +277,25 @@ background-color: #f1d68f;
 .botao {
   cursor: pointer;
   font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
+  border: none;
+  border-radius: 8px;
+  border: var(--TSound-Neutro-1);
+  
   font-weight: 600;
   font-size: 18px;
-  color: var(--TSound-Neutro-0);
-  background-color: #e6005a;
-  width: 120px;
-  height: 30px;
+  color: #fff;
+  background-color: var(--TSound-4);
+  padding: 0.4em 1.50em;
   align-self: center;
   margin-top: 20px;
+
+  transition: ease-in-out .4s;
+}
+
+.botao:hover{
+  background-color: var(--TSound-1);
+  padding: 0.4em 1.90em;
+  
 }
 
 .loading-div {
@@ -358,6 +367,8 @@ input {
   align-self: center;
   margin-top: 5px;
 }
+
+
 
 .loading-div {
   width: 50px;
