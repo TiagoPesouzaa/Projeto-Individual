@@ -70,7 +70,8 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: var(--TSound-5);
+  
 }
 
 /* .btn-default{
@@ -105,7 +106,9 @@ background-color: #f1d68f;
   justify-content: space-between;
   list-style: none;
   color: #e3b062;
+  
 }
+
 
 .titulo {
   color: #32b9cd;
@@ -248,7 +251,7 @@ background-color: #f1d68f;
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid var(--TSound-4);
   text-align: center;
   border-radius: 10px;
   margin: 0;

@@ -53,6 +53,7 @@ overflow: hidden;
 .violao-image{
     width: 100%;
     height: 60%;
+    object-fit: cover;
 }
 
 .dish-description{
@@ -66,8 +67,7 @@ overflow: hidden;
 
 #menu .section-subtitle  {
    color: #fff;
-   border: none;
-   border-style: outset;
+  
    background-color: var(--TSound-1);
 }
 

@@ -57,7 +57,7 @@ section{
 .btn-default {
     --color: #00A97F;
     --color2: rgb(10, 25, 30);
-    padding: 0.6em 1.75em;
+    padding: 0.4em 1.50em;
     background-color: transparent;
     border-radius: 6px;
     border: .3px solid var(--TSound-5);
