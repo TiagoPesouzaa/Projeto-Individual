@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <script src="./js/carrossel.js"></script>
   <title>CTA TSoundCloud</title>
 
-  <!-- <script src="./js/sessao.js"></script> -->
-  <!-- <link rel="stylesheet" href="./css/estilo.css"> -->
 
  
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal"></script> 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -40,15 +38,25 @@
       <ul id="nav-list">
 
         <li class="nav-itens">
-          <a href="#home">Início</a>
+          <a href="#home">Home</a>
         </li>
 
         <li class="nav-itens">
-          <a href="#menu">Cardápio</a>
+          <a href="#violoes">Introdução</a>
+        </li>
+
+        
+        <li class="nav-itens">
+          <a href="#onu">Onu</a>
+        </li>
+
+
+        <li class="nav-itens">
+          <a href="#menu">Menu</a>
         </li>
 
         <li class="nav-itens">
-          <a href="#testimonials">Avaliações</a>
+          <a href="#testimonials">Momentos</a>
         </li>
 
       </ul>
@@ -106,7 +114,7 @@
     <!-- Tela Home  -->
     <section id="home">
 
-      <div class="shape"></div>
+      <!-- <div class="shape"></div> -->
 
       <div id="cta">
 
@@ -153,17 +161,56 @@
 
 
     <!-- Parte da introdução -->
-    <section class="space-introduction">
+    <!-- Carrosel -->
+    
+    <!-- <h1 class="title-introducao"> A Origem </h1> -->
+    <div class="carousel" id="violoes">
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <div class="carousel-content">
 
-      <h1 class="title"> Introdução
-      </h1>
-      
-      <section id="introduction">
+        <div class="slide">
+          <article>
+            <h1>A Evolução</h1>
+            <p> Das primeiras cordas, aos acordes futuros.</p>
+            <button onclick="alert('Botão do Slide 1 clicado')">Saiba Mais</button>
+          </article>
+          <img src="./assets/imgs/img-carros/img-carro01.png" alt="Imagem 1">
+        </div>
 
-        
-      </section>
+        <div class="slide">
+          <article>
+            <h1>Século XIX </h1>
+            <p>......</p>
+            <button onclick="alert('Botão do Slide 1 clicado')">Saiba Mais</button>
+          </article>
+          <img src="./assets/imgs/img-carros/img-carro01.png" alt="Imagem 2">
+        </div>
 
-    </section>
+        <div class="slide">
+          <article>
+            <h1>Século XX</h1>
+            <p>......</p>
+            <button onclick="alert('Botão do Slide 1 clicado')">Saiba Mais</button>
+          </article>
+          <img src="./assets/imgs/img-carros/img-carro01.png" alt="Imagem 3">
+        </div>
+
+        <div class="slide">
+          <article>
+            <h1>Século XXI</h1>
+            <p>.......</p>
+            <button onclick="alert('Botão do Slide 1 clicado')">Saiba Mais</button>
+          </article>
+          <img src="./assets/imgs/img-carros/img-carro01.png" alt="Imagem 4">
+        </div>
+
+        <!-- Adicione mais slides conforme necessário -->
+      </div>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <div class="slide-indicators"></div> 
+
+
     <!-- Fim da introdução -->
 
     <!-- Parte da ONU -->
@@ -349,63 +396,86 @@
 
      <!-- Sessão Testmonials -->
     <section id="testimonials">
-      <img src="../public/assets/imgs/images/chef.png" alt="" id="testimonials-chef">
+      <!-- <img src="../public/assets/imgs/images/chef.png" alt="" id="testimonials-chef"> -->
 
         <div id="testimonials-content">
           <h2 class="section-title">
-            Depoimentos
+            O amor pelo Samba
           </h2>
 
           <h3 class="section-subtitle">
-            Momentos Marcantes
+            "O Samba é o meu dom."
           </h3>
 
           <div id="feedbacks">
 
             <!-- Primeiro feedback -->
-            <div class="feedback">
-              <img src="../public/assets/imgs/images/avatar.png" alt="" class="feedback-avatar">
+            <div class="feedback" id="yamandu-card">
+              <img src="../public/assets/imgs/images/yamandu.jpg" alt="" class="feedback-avatar" id="yamandu">
               <div class="feedback-content">
-                <p>
+                <p id="title-content">
 
-                  Fulana de Tal
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
+                  Yamandu Costa
+                 
 
                 </p>
 
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
                 <p>
-                  
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
                 </p>
+
+
               </div>
             </div>
 
             <!-- Segundo feedback -->
-            <div class="feedback">
-              <img src="../public/assets/imgs/images/avatar.png" alt="" class="feedback-avatar">
+            <div class="feedback" id="rafael-card">
+              <img src="../public/assets/imgs/images/rafael dos anjos.jpeg" alt="" class="feedback-avatar" id="rafael">
               <div class="feedback-content">
-                <p>
+                <p id="title-content">
 
-                  Fulana de Tal
-                  <span>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </span>
+                  Rafael dos Anjos
+                 
 
                 </p>
 
-                "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
                 <p>
-                  
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
+                </p>
+                
+              </div>
+            </div>
+
+            <div class="feedback" id="rogerio-card">
+              <img src="../public/assets/imgs/images/rogerio caetano.jpg" alt="" class="feedback-avatar" id="rogerio">
+              <div class="feedback-content">
+                <p id="title-content">
+
+                 Rogério Caetano
+                 
+
+                </p>
+
+                <p>
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
+                </p>
+
+              </div>
+            </div>
+
+            <div class="feedback" id="ailton-card">
+              <img src="../public/assets/imgs/images/avatar.png" alt="" class="feedback-avatar" id="ailton">
+              <div class="feedback-content">
+                <p id="title-content">
+
+                  Ailton Freitas
+  
+
+                </p>
+
+               
+                <p>
+                  "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum cgtdfxgsv"
                 </p>
               </div>
             </div>
@@ -413,11 +483,23 @@
             
           </div>
 
-          <button class="btn-default">
+          <!-- <button class="btn-default" id="showCard">
             Ver mais avaliações
-          </button>
+          </button> -->
+
         </div>
     </section>
+
+    <!-- Sobreposição e Card -->
+    <div id="overlay"></div>
+    <div id="card">
+        <!-- Conteúdo do card aqui -->
+    </div>
+
+   
+
+    <script src="./js/testimonials.js"></script>
+
   </main>
 
 
@@ -458,80 +540,26 @@
 </html>
 
 
+     <!--  Ideias de Introdução  -->
 
+     <!-- 1. **História do Violão:** Explore a origem e a evolução do violão ao longo dos séculos, 
+        desde suas raízes antigas até os designs modernos.
+      
+      2. **Estilos Musicais:** Analise os diferentes estilos musicais em que o violão 
+      desempenha um papel fundamental, como flamenco, blues, jazz, música clássica, folk, rock, entre outros.
+      
+      3. **Grandes Mestres do Violão:** Apresente biografias e contribuições de 
+      grandes guitarristas e violonistas ao longo da história, como Andres Segovia, Django Reinhardt, Jimi Hendrix, entre outros.
+      
+      
+      4. **Saúde e Técnica Corporal:** Discuta a importância da postura correta, 
+      ergonomia e práticas saudáveis para prevenir lesões comuns entre os violonistas.
+      
+      5. **Inovações Tecnológicas:** Explore como a tecnologia está influenciando a
+       fabricação de violões e o processo de aprendizado, incluindo aplicativos, softwares e equipamentos modernos.
+      
+          -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div> -->
+    <!-- Frases para encerrar ou iniciar -->
+      <!-- Das primeiras notas sussurradas nas cortes reais às acordes vibrantes que ecoam em palcos lotados, o violão tem sido mais do que um mero instrumento; é um companheiro fiel na trilha da humanidade. Vamos desvendar juntos os capítulos dessa evolução, onde 
+      cada nota ressoa como um eco do passado, presente e futuro da música -->

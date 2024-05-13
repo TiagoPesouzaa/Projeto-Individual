@@ -12,13 +12,28 @@
     height: auto;
 }
 
+.feedback-content #title-content{
+    color: var(--TSound-Neutro-1);
+    font-size: 20px;
+}
+
 #testimonials .section-subtitle {
-    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2.3rem;
+    color: var(--TSound-Neutro-0);
+
 }
 
 #testimonials-content {
     width: 50%;
 
+}
+
+#testimonials-content .section-title {
+display: flex;
+justify-content: center;
+margin-top: 10%;
 }
 
 #feedbacks {
@@ -56,6 +71,38 @@
 .feedback-content p span {
     color: var(--TSound-4);
 }
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade */
+    backdrop-filter: blur(5px); /* Desfoque do fundo */
+
+    z-index: 1000; /* Certifique-se de que a sobreposição esteja acima do conteúdo */
+}
+
+#card {
+    display: none;
+    position: fixed;
+    border: none;
+    border-radius: 20px;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--TSound-Neutro-0);
+    padding: 200px;
+    box-shadow: 4px 4px 10px 8px var(--TSound-Neutro-1);
+    
+
+    z-index: 1001; /* Certifique-se de que o card esteja acima da sobreposição */
+}
+
+
 
 /* Responsividade */
 @media screen and (max-width : 1170px) {

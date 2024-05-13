@@ -13,7 +13,7 @@ $(document).ready(function () {
     $(window).on('scroll', function () {
 
         const header = $('header'); // const para chamar o header
-        const scrollPosition = $(window).scrollTop() - header.outerHeight();   // constv : para achar a posição da rolagem. | conta : tamanho da janela - altura do header        
+        const scrollPosition = $(window).scrollTop() - header.outerHeight();   // const : para achar a posição da rolagem. | conta : tamanho da janela - altura do header        
 
         let activeSectionIndex = 0; // em qual SESSÃO que esse index está.
 
@@ -71,5 +71,21 @@ $(document).ready(function () {
         duration: 2000,
         distance: '20%',
     });
+
+    ScrollReveal().reveal('.carousel', {
+        origin: 'right',
+        duration: 2500,
+        distance: '20%',
+    });
+
+    ScrollReveal().reveal('.space-onu', {
+        origin: 'left',
+        duration: 2500,
+        distance: '20%',
+    });
+
 });
+
+
+
 

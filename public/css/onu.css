@@ -1,8 +1,15 @@
 #onu{
-    display: flex;
-    min-height: calc(100vh - 91px);
-    position: relative;
    
+      display: flex;
+      width: 80vw;
+      height: 72vh;
+      position: relative;
+      
+    
+     
+      justify-content: center;
+      align-items: center;
+    
 }
 
 .space-onu .title{
