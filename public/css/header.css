@@ -27,7 +27,7 @@ header .buttons-navbar {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 #nav-logo {
@@ -46,7 +46,16 @@ header .buttons-navbar {
     text-decoration: none;
     color:var(--TSound-7);
     font-weight: 600;
+
+    transition: ease-in-out .4s;
 }
+.nav-itens a:hover{
+    color: var(--TSound-4);
+    
+    border: none;
+    
+}
+
 
 .nav-itens.active a {
     color: var(--TSound-Neutro-1);
