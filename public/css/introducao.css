@@ -11,11 +11,12 @@
 .slide {
     width: 100vw;
     height: 72vh;
-    background-color: var(--TSound-6);
+    background-color: var(--TSound-4);
   
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
   
   .slide article {
@@ -36,7 +37,7 @@
   .slide article p {
     margin: 0;
     font-size: 24px;
-    color: var(--TSound-1);
+    color: var(--TSound-Neutro-0);
   }
   
   .slide article button {
@@ -54,16 +55,17 @@
   }
   
   .slide article button:hover{
-    background-color: var(--TSound-1);
-    color: var(--TSound-Neutro-0);
+    background-color: var(--TSound-6);
+    color: var(--TSound-Neutro-1);
     cursor: pointer;
   }
   
   .slide img {
-    width: 20vw;
+    width: 22vw;
     border: var(--TSound-Neutro-0) 5px solid;
     border-radius: 50px;
     margin-right: 10em;
+    object-fit: cover;
   }
   
   .carros .seta {
@@ -82,7 +84,8 @@
 
     
 
-    box-shadow: 0px 4px 8px 8px #fff ;
+    /* box-shadow: 0px 4px 8px 10px var(--TSound-6); */
+    
   }
   
   .carousel-content {
