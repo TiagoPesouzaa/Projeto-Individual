@@ -42,19 +42,60 @@ header .buttons-navbar {
 
 }
 
+/* Adicionando uma linha sob os itens da barra de navegação quando o mouse passa sobre eles */
+/* Adicionando uma linha suave sob os itens da barra de navegação quando o mouse passa sobre eles */
+/* Adicionando uma linha suave sob os itens da barra de navegação quando o mouse passa sobre eles */
 .nav-itens a {
     text-decoration: none;
-    color:var(--TSound-7);
+    color: var(--TSound-7);
     font-weight: 600;
+    position: relative; /* Para posicionar o ::after corretamente */
+    transition: ease-in-out .4s; /* Transição para o texto */
+}
 
-    transition: ease-in-out .4s;
-}
 .nav-itens a:hover{
-    color: var(--TSound-4);
-    
-    border: none;
-    
+    color: white;
+   
 }
+
+
+
+.nav-itens a::before {
+    content: ""; /* Adicionando o elemento antes do link */
+    position: absolute; /* Posicionamento absoluto em relação ao link */
+    left: 0; /* Começa do início do link */
+    width: 0; /* Começa sem largura */
+    bottom: -3px; /* Distância do link (altura da linha) */
+    height: 3px; /* Altura da linha */
+    background-color: transparent; /* Cor da linha inicialmente transparente */
+    transition: width 0.4s ease-in-out; /* Transição para a largura da linha */
+}
+
+.nav-itens a:hover::before {
+    width: 100%; /* Largura total do link ao passar o mouse */
+    left: auto; /* Inverte o início para a direita */
+    right: 0; /* Termina na direita */
+    transition: width 0.4s ease-in-out; /* Transição para a largura da linha */
+}
+
+.nav-itens a::after {
+    content: ""; /* Adicionando o elemento após o link */
+    position: absolute; /* Posicionamento absoluto em relação ao link */
+    left: 0; /* Começa do início do link */
+    width: 0; /* Começa sem largura */
+    bottom: -3px; /* Distância do link (altura da linha) */
+    height: 3px; /* Altura da linha */
+    background-color: var(--TSound-4); /* Cor da linha inicialmente transparente */
+    transition: width 0.6s ease-in-out; /* Transição para a largura da linha */
+}
+
+.nav-itens a:hover::after {
+    width: 100%; /* Largura total do link ao passar o mouse */
+}
+
+
+
+
 
 
 .nav-itens.active a {
