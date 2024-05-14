@@ -1,15 +1,15 @@
 
-$(document).ready(function () {
-    $('#mobile-btn').on('click', function () {
-        $('#mobile-menu').toggleClass('active')
-        $('#mobile-btn').find('i').toggleClass('fa-x')
-    });
+// $(document).ready(function () {
+//     $('#mobile-btn').on('click', function () {
+//         $('#mobile-menu').toggleClass('active')
+//         $('#mobile-btn').find('i').toggleClass('fa-x')
+//     });
 
     // criando as constantes que serão usadas na função abaixo.
-    const sections = $('section');
-    const navItems = $('.nav-itens');
+    // const sections = $('section');
+    // const navItems = $('.nav-itens');
 
-    // Quando rolar a página
+    // // Quando rolar a página
     $(window).on('scroll', function () {
 
         const header = $('header'); // const para chamar o header
@@ -84,7 +84,7 @@ $(document).ready(function () {
         distance: '20%',
     });
 
-});
+// });
 
 
 
