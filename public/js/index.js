@@ -50,7 +50,7 @@
 
     ScrollReveal().reveal('#cta', {
         origin: 'left',
-        duration: 2000,
+        duration: 3000,
         distance: '20%',
     });
 
@@ -81,6 +81,13 @@
     ScrollReveal().reveal('.space-onu', {
         origin: 'left',
         duration: 2500,
+        distance: '20%',
+    });
+
+
+    ScrollReveal().reveal('#banner', {
+        origin: 'right',
+        duration: 3000,
         distance: '20%',
     });
 

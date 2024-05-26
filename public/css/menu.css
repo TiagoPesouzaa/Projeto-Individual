@@ -57,8 +57,9 @@
 }
 
 .dish-description {
-    color: #434343;
+    color: var(--TSound-Neutro-0);
     text-align: center;
+    font-size: 1.550rem;
 }
 
 .dish-rate i {
