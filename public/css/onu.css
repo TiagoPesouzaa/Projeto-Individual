@@ -4,6 +4,11 @@
       width: 80vw;
       height: 72vh;
       position: relative;
+     
+      border: none;
+      border: 3px solid var(--TSound-4);
+      border-radius: 20px;
+      object-fit: cover;
       
     
      
@@ -31,7 +36,7 @@ color: var(--TSound-6);
     justify-content: center;
     width: 100%;
     perspective: 800px;
-    margin-top: 10%;
+ 
     cursor: pointer;
 
   }

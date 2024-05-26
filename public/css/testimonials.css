@@ -97,11 +97,11 @@ margin-top: 10%;
     position: fixed;
     border: none;
     border-radius: 20px;
-    
+    color: #fff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--TSound-Neutro-0);
+    background-color: var(--TSound-Neutro-1);
     padding: 200px;
     box-shadow: 4px 4px 10px 8px var(--TSound-Neutro-1);
     
