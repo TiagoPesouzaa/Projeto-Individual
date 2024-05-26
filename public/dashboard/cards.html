@@ -6,14 +6,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Tempo Real</title>
+    <title>TSoundCloud</title>
 
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
+    <link rel="stylesheet" href="../css/quizz.css" />
 
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
+    <script src="../js/quizz.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -21,9 +23,9 @@
 </head>
 
 <body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
-     <!-- <body> para fazer o css -->
-        
-   
+    <!-- <body> para fazer o css -->
+
+
 
     <div class="janela">
 
@@ -58,7 +60,119 @@
         </div>
 
         <div class="dash">
-            <div id="alerta">
+            <div id="content-quizz">
+                <h1>Quiz sobre Violão</h1>
+                <div id="quiz">
+                    <div id="question">Carregando questão...</div>
+                    <div id="options"></div>
+                    <button id="submitBtn">Próxima Questão</button>
+                </div>
+                <div id="result"></div>
+            </div>
+            <script>
+                const quizData = [
+                    // Século XIX
+                    {
+                        question: "Qual foi o instrumento precursor do violão moderno, popularizado no século XIX e conhecido por suas seis cordas de nylon?",
+                        options: ["Bandolim", "Cavaquinho", "Viola caipira", "Viola espanhola"],
+                        answer: 3
+                    },
+                    {
+                        question: "Quem é considerado o maior compositor para violão do século XIX, conhecido por suas obras como 'Estudo em Mi Menor' e 'Gran Vals'?",
+                        options: ["Isaac Albéniz", "Francisco Tárrega", "Fernando Sor", "Napoleão Coste"],
+                        answer: 1
+                    },
+                    // Século XX
+                    {
+                        question: "Qual foi o movimento musical brasileiro que teve grande influência no desenvolvimento do violão brasileiro, especialmente na década de 1960?",
+                        options: ["Bossa Nova", "Tropicália", "Samba", "Choro"],
+                        answer: 0
+                    },
+                    {
+                        question: "Quem é o compositor brasileiro conhecido por suas peças para violão, como 'Valsa-Choro' e 'Ciclo Brasileiro'?",
+                        options: ["Villa-Lobos", "Tom Jobim", "Pixinguinha", "Radamés Gnattali"],
+                        answer: 0
+                    },
+                    // Século XXI
+                    {
+                        question: "Qual é o nome do projeto criado por Yamandu Costa que visa promover a educação musical e o ensino do violão em comunidades carentes?",
+                        options: ["Projeto Guri", "Violão nas Escolas", "Violão Amigo", "Villa-Lobos Vive"],
+                        answer: 2
+                    },
+                    {
+                        question: "Qual é o estilo de música instrumental brasileira que mistura elementos de choro, samba, baião e jazz, frequentemente tocado por violonistas contemporâneos?",
+                        options: ["Bossa Nova", "Forró", "Samba-Rock", "Música de Câmara"],
+                        answer: 1
+                    },
+                    {
+                        question: "Quem é o violonista brasileiro conhecido por sua técnica apurada e influência do jazz em sua música, tendo vencido o Grammy Latino de Melhor Álbum Instrumental?",
+                        options: ["Hamilton de Holanda", "Yamandu Costa", "Raphael Rabello", "Baden Powell"],
+                        answer: 0
+                    },
+                    {
+                        question: "Qual é o nome do renomado violonista brasileiro que, além de sua carreira solo, é membro fundador do Trio Madeira Brasil e professor na Universidade Federal do Rio de Janeiro?",
+                        options: ["Marco Pereira", "Paulinho Nogueira", "Guinga", "Dilermando Reis"],
+                        answer: 0
+                    }
+                ];
+
+                // Restante do código JavaScript para o funcionamento do quiz...
+
+
+                const questionElement = document.getElementById("question");
+                const optionsElement = document.getElementById("options");
+                const submitBtn = document.getElementById("submitBtn");
+                const resultElement = document.getElementById("result");
+
+                let currentQuestion = 0;
+                let score = 0;
+
+                function loadQuestion() {
+                    questionElement.textContent = quizData[currentQuestion].question;
+                    optionsElement.innerHTML = "";
+                    for (let i = 0; i < quizData[currentQuestion].options.length; i++) {
+                        const option = document.createElement("div");
+                        option.textContent = quizData[currentQuestion].options[i];
+                        option.classList.add("option");
+                        option.dataset.index = i;
+                        optionsElement.appendChild(option);
+                    }
+                }
+
+                document.getElementById("options").addEventListener("click", function (event) {
+                    if (event.target.classList.contains("option")) {
+                        checkAnswer(event);
+                    }
+                });
+
+                function checkAnswer(event) {
+                    const selectedOption = event.target;
+                    const selectedIndex = parseInt(selectedOption.dataset.index);
+                    if (selectedIndex === quizData[currentQuestion].answer) {
+                        score++;
+                    }
+                    currentQuestion++;
+                    if (currentQuestion < quizData.length) {
+                        loadQuestion();
+                    } else {
+                        showResult();
+                    }
+                }
+
+                function showResult() {
+                    questionElement.textContent = "";
+                    optionsElement.innerHTML = "";
+                    submitBtn.style.display = "none";
+                    resultElement.textContent = `Você acertou ${score} de ${quizData.length} questões.`;
+                }
+
+                loadQuestion();
+            </script>
+        </div>
+
+
+
+        <!-- <div id="alerta">
             </div>
             <div class="area-parametros-alerta">
                 <p class="titulo-legenda">
@@ -85,14 +199,14 @@
                         <p>Perigo</p>
                         <p>&gt;=23°C</p>
                     </div>
-                </div>
-            </div>
+                </div> -->
 
-            <div class="cards" id="cardAquarios">
 
-            </div>
+        <!-- <div class="cards" id="cardAquarios"> -->
 
-        </div>
+    </div>
+
+    </div>
 
     </div>
 
