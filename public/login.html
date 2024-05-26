@@ -11,7 +11,7 @@
     <script src="./js/sessao.js"></script>
 
     <!-- <link rel="stylesheet" href="./css/estilo.css"> -->
-    <link rel="stylesheet" href="../public/css/estilo.css">
+    <link rel="stylesheet" href="./css/estilo.css">
     <link rel="icon" href="./assets/icon/favicon2.ico">
    
 
@@ -57,7 +57,7 @@
         </div>
         <div class="container">
             <div class="card card-login">
-                <h2>Olá de volta!</h2>
+                <h2>Login</h2>
                 <div class="formulario">
                     <div class="campo">
                         <span>E-mail:</span>
@@ -137,11 +137,13 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
+
+                   
 
                 });
 
@@ -164,6 +166,7 @@
 
     function sumirMensagem() {
         cardErro.style.display = "none"
+        window.location = "./dashboard/dashboard.html"; // caminho
     }
 
 </script>

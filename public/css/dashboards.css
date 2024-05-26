@@ -1,11 +1,15 @@
 /* pagina geral */
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 .label-captura {
@@ -16,7 +20,7 @@ body {
 .dash-right .avisos {
   width: 100%;
   color: rgb(216, 216, 216);
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .dash-right .avisos .container {
@@ -33,38 +37,41 @@ body {
   width: 95%;
 }
 
+
+
 .dash-right .avisos .div-form label {
   width: 95%;
 }
 
 .dash-right .avisos .div-form input {
   width: 95%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .dash-right .avisos .div-form textarea {
   width: 95%;
-  border: 3px solid #e6005a;
+  border: 3px solid var(--TSound-1);
   background-color: white;
   border-radius: 5px;
 }
 
 .dash-right .avisos .div-form button {
   cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
   border: 0;
   border-radius: 5px;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
   color: white;
-  background-color: #e6005a;
+  background-color: var(--TSound-1);
   width: 120px;
+  justify-content: center;    
 }
 
 .publicacao-btn-editar {
   cursor: pointer;
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
   border: 0;
   border-radius: 5px;
   font-weight: 600;
@@ -79,7 +86,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
-  flex-direction: column;
+  flex-direction: column;     
   justify-content: center;
   align-items: stretch;
   border-bottom: 3px solid #e6005a;
@@ -281,13 +288,13 @@ body {
 }
 
 .btn-chart {
-  font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
   border: 0;
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
   color: #e6005a;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   margin: 5px;
   border-radius: 3px;
   cursor: pointer
@@ -348,24 +355,26 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid var(--TSound-4);
+  background-color: var(--TSound-1);
 }
 
 .dash-right {
   display: flex;
   width: 70%;
   height: fit-content;
-  background-color: #161618;
+  background-color: var(--TSound-4);
   position: relative;
-  top: 0;
+  margin-top: 5%;
   left: 25%;
-  height: 100vh;
-  overflow: auto;
+  height: 80vh;
+  border: none;
+  border-radius: 30px;
+  
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: var(--TSound-4);
 }
 
 .hello {
@@ -375,8 +384,8 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
-  font-weight: 300;
+  color: var(--TSound-4);
+  font-weight: 300; 
   font-size: 1.2rem;
 }
 
@@ -385,25 +394,25 @@ canvas {
 }
 
 .btn-nav {
-  width: 40%;
-  color: white;
-  background-color: #e6005a;
+  
+  color: var(--TSound-1);
+  background-color: var(--TSound-6);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white {
-  width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+ 
+  background-color: var(--TSound-7);
+  border: 3px solid var(--TSound-4);
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: var(--TSound-1);
   padding: 0;
   margin: 0;
 }
@@ -415,14 +424,20 @@ canvas {
 }
 
 .btn-logout {
-  margin: 0;
-  padding: 0;
-  width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  
+  background-color: var(--TSound-6);
+  color: var(--TSound-1);
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
   margin-bottom: 100px;
   cursor: pointer;
+  box-shadow: 0px 6px 4px 4px var(--TSound-Neutro-1);
+
+  transition: ease-in-out .4s;
 }
+
+.btn-logout:hover{
+  background-color: var(--TSound-4);
+}
+
