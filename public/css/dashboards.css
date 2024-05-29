@@ -127,7 +127,7 @@ body {
   position: relative;
   top: 0;
   left: 20%;
-  background-color: #161618;
+  background-color: var(--TSound-1);
   height: 100vh;
   overflow: auto;
 }
