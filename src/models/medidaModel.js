@@ -9,7 +9,7 @@ function buscarUltimasMedidas(idUsuario) {
                     ORDER BY id DESC LIMIT 1`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);
+    return database.executar(instrucaoSql);     
 }
 
 // function buscarMedidasEmTempoReal(idAquario) {

@@ -70,9 +70,13 @@
             <div class="btns-dash" id="btnAquario">
                 <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
             </div>
-            <div id="graficos">
-                <canvas style="background-color: azure;" id="myChartCanvas"></canvas>
+            <div id="graficos" class="graficoResultado">
+                <h1>Seus Acertos</h1>
+                <canvas style="background-color: white;" id="myChartCanvas"></canvas>
             </div>
+            <!-- <div id="graficos" class="graficoResultadoGeral">
+                <canvas style="background-color: rgb(163, 116, 28);" id="myChartCanvas"></canvas>
+            </div> -->
         </div>
     </div>
 
@@ -200,7 +204,7 @@
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
-        let labels = ["score"];
+        let labels = ["Pontuação"];
 
         // Criando estrutura para plotar gráfico - dados
         let dados = {
@@ -236,7 +240,7 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'line',
+            type: 'bar',
             data: dados,
         };
 

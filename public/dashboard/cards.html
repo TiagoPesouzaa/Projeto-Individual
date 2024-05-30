@@ -65,7 +65,7 @@
                 <div id="quiz">
                     <div id="question">Carregando questão...</div>
                     <div id="options"></div>
-                    <button id="submitBtn">Próxima Questão</button>
+                    <!-- <button id="submitBtn">Próxima Questão</button> -->
                 </div>
                 <div id="result"></div>
             </div>
@@ -121,7 +121,6 @@
 
                 const questionElement = document.getElementById("question");
                 const optionsElement = document.getElementById("options");
-                const submitBtn = document.getElementById("submitBtn");
                 const resultElement = document.getElementById("result");
 
                 let currentQuestion = 0;
@@ -163,7 +162,6 @@
                 function showResult() {
                     questionElement.textContent = "";
                     optionsElement.innerHTML = "";
-                    submitBtn.style.display = "none";
                     resultElement.textContent = `Você acertou ${score} de ${quizData.length} questões.`;
                     fetch("/quizz/cadastrar", {
                         method: "POST",

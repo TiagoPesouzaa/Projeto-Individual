@@ -441,3 +441,21 @@ canvas {
   background-color: var(--TSound-4);
 }
 
+.graficoResultado{
+  margin: auto;
+  width: 500px;
+
+}
+
+/* .graficoResultadoGeral{
+  width: 500px;
+  
+} */
+
+
+.graficoResultado h1{
+color: var(--TSound-6);
+display: flex;
+justify-content: center;
+}
+
