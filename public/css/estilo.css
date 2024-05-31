@@ -24,6 +24,9 @@
   --tamanho-footer: 65px;
 }
 
+
+
+
 * {
 
   font-family: "Poppins", sans-serif;
@@ -120,72 +123,15 @@ background-color: #f1d68f;
   margin: 0;
 }
 
-/* BANNER
-
-.banner {
-  height: var(--tamanho-banner);
-  color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
-  background-size: cover;
-}
-
-.banner .container {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.banner .container p {
-  width: 50%;
-  margin: 0;
-  padding: 0;
-  font-size: 36px;
-}
-
-.banner .container span {
-  font-weight: 800;
-} */
-
-/* MISSÃO VISÃO VALORES
-
-.social {
-  background-color: #e5e5e5;
-  display: flex;
-}
-
-.social .container {
-  justify-content: center;
-}
-
-.box img {
-  width: 170px;
-}
-
-.social .container .boxes {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 30px 0;
-}
-
-.social p {
-  text-align: center;
-}
-
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
 
 /* FOOTER */
 
 .footer {
-  background-color: var(--TSound-2);
+  background-color: var(--TSound-1);
   height: 95px;
-  color: var(--TSound-Neutro-1);
+  color: var(--TSound-Neutro-0);
   display: flex;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .footer .container {
@@ -218,16 +164,19 @@ background-color: #f1d68f;
 }
 
 .card {
-  width: 35%;
-  background-color: #e5e5e5;
-  border-radius: 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  color: var(--TSound-Neutro-1);
-  flex-direction: column;
+  
+  background: linear-gradient(45deg, var(--TSound-1), var(--TSound-4));
+  color: var(--TSound-Neutro-0);
+  width: 35%;
+  border-radius: 20px;
+  
   height: fit-content;
   padding: 5px 5px;
+  box-shadow: 0px 2px 12px 12px var(--TSound-2);
 }
 
 
@@ -381,17 +330,31 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
+/* Saber mais */
 
-.simulador {
-  color: white;
+.sobre-mim {
+ color: #fff;
+  margin: 3%;
+  height: 100%;
 }
 
-.simulador .container {
+.sobre-mim h2 {
+  display: flex;
+  justify-content: center;
+  margin: 3%;
+}
+
+.sobre-mim .container {
   flex-direction: column;
-
-  height: var(--tamanho-simulador);
+  font-size: 17px;
+  background: linear-gradient(90deg, var(--TSound-1), var(--TSound-4));  
+  color: white;
+  box-shadow: 0px 0px 12px 6px var(--TSound-4);
+  padding: 5%;
 }
+
+
+
 
 /* ALERTA */
 

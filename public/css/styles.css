@@ -65,13 +65,13 @@
         padding: 28px 8%;
     }
     .btn-default {
-        --color: #00A97F;
-        --color2: rgb(10, 25, 30);
+        /* --color: #00A97F;
+        --color2: rgb(10, 25, 30); */
         padding: 0.4em 1.50em;
         background-color: transparent;
         border-radius: 6px;
         border: .3px solid var(--TSound-5);
-        transition: .5s;
+        transition: .7s;
         position: relative;
         overflow: hidden;
         cursor: pointer;
@@ -81,8 +81,13 @@
         text-transform: uppercase;
         color: var(--TSound-2);
     }
+
+    .btn-default:hover{
+        background-color: var(--TSound-2);
+        color: #1d1d1d;
+    }
     
-    .btn-default::after, .btn-default::before {
+    /* .btn-default::after, .btn-default::before {
         content: '';
         display: block;
         height: 100%;
@@ -117,7 +122,7 @@
     .btn-default:active {
         filter: brightness(.7);
         transform: scale(.98);
-    }
+    } */
 
 
 

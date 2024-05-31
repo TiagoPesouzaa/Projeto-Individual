@@ -13,7 +13,7 @@ function cadastrar(req, res) {
     if (score == undefined) {
         res.status(400).send("Seu score está undefined!");
     } else if (usuarioId == undefined) {
-        res.status(400).send("Seu email está undefined!");
+        res.status(400).send("Seu usuarioId está undefined!");
     // } else if (senha == undefined) {
     //     res.status(400).send("Sua senha está undefined!");
     // } else if (empresaId == undefined) {

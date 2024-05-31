@@ -442,20 +442,20 @@ canvas {
 }
 
 .graficoResultado{
-  margin: auto;
-  width: 500px;
+  display: flex;  
+  width: 300px;
 
 }
 
-/* .graficoResultadoGeral{
-  width: 500px;
-  
-} */
+.todos-graficos{
+  display: flex;
+  gap: 20%;
+}
 
 
 .graficoResultado h1{
 color: var(--TSound-6);
-display: flex;
+
 justify-content: center;
 }
 
