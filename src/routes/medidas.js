@@ -14,6 +14,15 @@ router.get("/buscarMediaGeral/:idUsuario", function (req, res) {
 });
 
 
+router.get("/buscarQuantidadePessoas", function (req, res) {
+    medidaController.buscarQuantidadePessoas(req, res);
+});
+
+router.get("/buscarPessoaComMaisAcertos", function (req, res) {
+    medidaController.buscarPessoaComMaisAcertos(req, res);
+});
+
+
 
 // router.get("/tempo-real/:idAquario", function (req, res) {
 //     medidaController.buscarMedidasEmTempoReal(req, res);

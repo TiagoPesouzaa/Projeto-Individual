@@ -12,6 +12,8 @@ function buscarUltimasMedidas(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+
+
 function buscarMediaGeral(Quantidade) {
 
     console.log("ACESSEI a MEDIDA MODEL para buscar a media dos usuários, function buscarMediaGeral()", Quantidade);
@@ -24,23 +26,36 @@ function buscarMediaGeral(Quantidade) {
     return database.executar(instrucaoSql);
 }
 
-// function buscarMedidasEmTempoReal(idAquario) {
 
-//     var instrucaoSql = `SELECT 
-//         dht11_temperatura as temperatura, 
-//         dht11_umidade as umidade,
-//                         DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-//                         fk_aquario 
-//                         FROM medida WHERE fk_aquario = ${idAquario} 
-//                     ORDER BY id DESC LIMIT 1`;
 
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+function buscarQuantidadePessoas() {
+
+    console.log("ACESSEI a MEDIDA MODEL para buscar a quantidade dos usuários, function buscarQuantidadePessoas()");
+
+    var instrucaoSql = `select count(u.nome) as quantidade_pessoas
+    from tsound.usuario as u;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
+
+function buscarPessoaComMaisAcertos() {
+
+    console.log("ACESSEI a MEDIDA MODEL para buscar a pessoa com mais acertos dos usuários, function buscarPessoaComMaisAcertos()");
+
+    var instrucaoSql = `select u.nome as pessoa_com_mais_acertos from usuario as u inner join quizz as q on u.id  = q.fkUsuario 
+    where q.score = (select max(score) from quizz) limit 1;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMediaGeral
+    buscarMediaGeral,
+    buscarQuantidadePessoas,
+    buscarPessoaComMaisAcertos
 }
-//     buscarMedidasEmTempoReal
-// }
+

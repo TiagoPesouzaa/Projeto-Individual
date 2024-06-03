@@ -444,7 +444,7 @@ canvas {
 
 
 .graficoResultadoPessoal{
-  margin: 10%;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   gap: 20%;
@@ -453,7 +453,7 @@ canvas {
 }
 
 .graficoResultadoGeral{
-  margin: 10%;
+  margin: 5%;
   display: flex;
   flex-direction: column;
   gap: 20%;
@@ -469,3 +469,41 @@ display: flex;
 justify-content: center;
 }
 
+
+.conjunto-KPIS{
+  display: flex;
+  padding: 3%;
+  justify-content: center;
+  justify-content: space-around;
+
+}
+
+.conjunto-KPIS .KPI{
+  background-color: var(--TSound-Neutro-1);
+  height: 180px;
+  width: 220px;
+  border: none;
+  border-radius: 10%; 
+  border: 2px solid var(--TSound-4);
+}
+
+.KPI h1{
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--TSound-6);
+  text-align: center;
+  margin-bottom: 15px;
+ 
+
+}
+.resultado-KPI{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  color: var(--TSound-Neutro-0);
+  font-size: 30px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}

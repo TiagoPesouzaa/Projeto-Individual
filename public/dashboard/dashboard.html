@@ -71,15 +71,26 @@
                 <div class="btns-dash" id="btnAquario">
                     <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
                 </div>
-                
-                    <div id="graficos" class="graficoResultadoPessoal">
-                        <h1>Seus Acertos</h1>
-                        <canvas style="background-color: white;" id="myChartCanvas"></canvas>
+
+
+                <div class="conjunto-KPIS">
+                    <div class="KPI">
+                        <h1>Quantidade Pessoas Cadastradas</h1>
+                        <div id="KPI_qtdPessoas" class="resultado-KPI"></div>
                     </div>
-                    <div id="graficos" class="graficoResultadoGeral">
-                        <h1>Média Geral de acertos</h1>
-                        <canvas style="background-color: white;" id="myChartCanvasMediaGeral"></canvas>
-                    
+                    <div class="KPI">
+                        <h1>Pessoa com mais acertos</h1>
+                        <div id="KPI_pessoaMaisAcertos" class="resultado-KPI"></div>
+                    </div>
+                </div>
+                <div id="graficos" class="graficoResultadoPessoal">
+                    <h1>Seus Acertos</h1>
+                    <canvas style="background-color: white;" id="myChartCanvas"></canvas>
+                </div>
+                <div id="graficos" class="graficoResultadoGeral">
+                    <h1>Média de acertos de todos os usuários</h1>
+                    <canvas style="background-color: white;" id="myChartCanvasMediaGeral"></canvas>
+
                 </div>
                 <!-- <div id="graficos" class="graficoResultadoGeral">
                 <canvas style="background-color: rgb(163, 116, 28);" id="myChartCanvas"></canvas>
@@ -200,6 +211,57 @@
                 console.error('Nenhum dado encontrado ou erro na API');
             }
         })
+
+
+        //quantidade de usuarios
+        fetch(`/medidas/buscarQuantidadePessoas`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarQuantidadeDePessoas(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+        // pessoa com maior pontuação
+        fetch(`/medidas/buscarPessoaComMaisAcertos`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarPessoaComMaisAcertos(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+
+
+
+            // maior nota
+            // fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            //     if (response.ok) {
+            //         response.json().then(function (resposta) {
+            //             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            //             resposta.reverse();
+
+            //             plotarGrafico(resposta, idUsuario);
+
+            //         });
+            //     } else {
+            //         console.error('Nenhum dado encontrado ou erro na API');
+            //     }
+            // })
+
+
+
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
@@ -242,6 +304,7 @@
                 label: 'Pontuação',
                 data: [],
                 fill: false,
+                backgroundColor: '#ffcb45',
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             }]
@@ -282,6 +345,36 @@
         // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
     }
 
+    // function quantidade de pessoas cadastradas
+    function plotarQuantidadeDePessoas(resposta) {
+
+        var dados = {
+            quantidade_pessoas: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.quantidade_pessoas.push(registro.quantidade_pessoas)
+        }
+        KPI_qtdPessoas.innerHTML = `${dados.quantidade_pessoas}`
+
+    }
+
+    // function pessoa com mais acertos
+    function plotarPessoaComMaisAcertos(resposta) {
+
+        var dados = {
+            pessoa_com_mais_acertos: []
+        }
+
+        for (var i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.pessoa_com_mais_acertos.push(registro.pessoa_com_mais_acertos)
+        }
+        KPI_pessoaMaisAcertos.innerHTML = `${dados.pessoa_com_mais_acertos}`
+
+    }
+
     // graf media geral
     function plotarMediaGeral(respostaMediaGeral, idUsuario) {
 
@@ -297,6 +390,7 @@
                 label: 'Media Geral',
                 data: [],
                 fill: false,
+                backgroundColor: '#ffcb45',
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             }]
