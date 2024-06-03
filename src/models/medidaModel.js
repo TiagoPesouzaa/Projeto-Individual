@@ -9,8 +9,20 @@ function buscarUltimasMedidas(idUsuario) {
                     ORDER BY id DESC LIMIT 1`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-    return database.executar(instrucaoSql);     
+    return database.executar(instrucaoSql);
 }
+
+// function buscarMediaGeral(Quantidade) {
+
+//     console.log("ACESSEI a MEDIDA MODEL para buscar a media dos usuários, function buscarMediaGeral()", Quantidade);
+
+//     var instrucaoSql = `select 
+//     round(avg(q.score)) 'Quantidade'
+//     from tsound.quizz as q`;
+
+//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
+//     return database.executar(instrucaoSql);
+// }
 
 // function buscarMedidasEmTempoReal(idAquario) {
 
@@ -28,6 +40,7 @@ function buscarUltimasMedidas(idUsuario) {
 
 module.exports = {
     buscarUltimasMedidas
+    // buscarMediaGeral
 }
 //     buscarMedidasEmTempoReal
 // }

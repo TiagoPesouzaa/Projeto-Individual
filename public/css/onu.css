@@ -10,8 +10,6 @@
       border-radius: 20px;
       object-fit: cover;
       
-    
-     
       justify-content: center;
       align-items: center;
     
@@ -35,8 +33,7 @@ color: var(--TSound-6);
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    perspective: 800px;
- 
+  
     cursor: pointer;
 
   }
@@ -50,7 +47,6 @@ color: var(--TSound-6);
     position: relative;
     transform-style: preserve-3d;
     box-shadow: 0px 0px 12px 8px rgba(125, 158, 160, 0.795) ;
-    will-change: transform;
     transition: transform .5s;
     overflow: hidden;
     

@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="./css/estilo.css" />
   <link rel="icon" href="./assets/icon/favicon2.ico" />
-  
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -33,7 +33,7 @@
         <li>
           <a href="saberMais.html">Sobre mim</a>
         </li>
-       
+
         <li class="agora">
           <a href="#">Cadastro</a>
         </li>
@@ -41,7 +41,7 @@
         <li>
           <a href="login.html">Login</a>
         </li>
-        
+
       </ul>
     </div>
   </div>
@@ -57,16 +57,6 @@
       <div class="card card-cadastro">
         <h2>Cadastrar-se</h2>
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <!-- <div class="campo">
-            <span>Empresa:</span>
-            <select name="empresas" id="listaEmpresas">
-              <option selected>Selecione uma empresa</option>
-            </select>
-          </div> -->
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -75,10 +65,6 @@
             <span>E-mail:</span>
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
-          <!-- <div class="campo">
-            <span>CPF:</span>
-            <input id="cpf_input" type="text" placeholder="Digite seu cpf" />
-          </div> -->
           <div class="campo">
             <span>Senha:</span>
             <input id="senha_input" type="password" placeholder="******" />
@@ -102,9 +88,9 @@
   <div class="footer">
     <div class="container">
       <h4>
-        &copy 2024 Tiago Pereira 
+        &copy 2024 Tiago Pereira
       </h4>
-      
+
     </div>
   </div>
   <!--footer fim-->
@@ -115,80 +101,75 @@
 <script>
   function cadastrar() {
     aguardar();
+    mensagem_erro.innerHTML = "";
 
-    //Recupere o valor da nova input pelo nome do id
+    // Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    // var empresaVar = listaEmpresas.value;
-    // var cpfVar = cpf_input.value;
 
-    let erroNome = (nomeVar.length <= 1)
-    let erroEmail = (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1)
-    let erroSenha = (senhaVar <= 6)
-    let erroSenhaConfirmacao = (confirmacaoSenhaVar != senhaVar)
-    // let erroCPF = (cpfVar.length != 11)
+    let erroNome = (nomeVar.length <= 1);
+    let erroEmail = (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1);
+    let erroSenha = (senhaVar.length <= 6);
+    let erroSenhaConfirmacao = (confirmacaoSenhaVar != senhaVar);
+    let senhaContemNumero = false;
 
-    
+    // For para validar a senha
+    // Inverti a lógica do isNaN
+    for (let contadorNumero = 0; contadorNumero < senhaVar.length; contadorNumero++) {
+      if (!isNaN(senhaVar[contadorNumero])) {
+        senhaContemNumero = true;
+        break;
+      }
+    }
+
     if (
-      nomeVar == "" ||
-      emailVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
-      // empresaVar == "" 
-      // cpfVar == ""
+      nomeVar === "" ||
+      emailVar === "" ||
+      senhaVar === "" ||
+      confirmacaoSenhaVar === ""
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
+      mensagem_erro.innerHTML = "(Todos os campos devem ser preenchidos!)";
       finalizarAguardar();
       return false;
-    }
-      
-      if (nomeVar == erroNome) {
+
+    } else if (erroNome) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Erro no nome !)"
-
+      mensagem_erro.innerHTML = "(Nome inválido. Deve conter mais letras!)";
       finalizarAguardar();
       return false;
 
-    }
-    else if (emailVar == erroEmail) {
+    } else if (erroEmail) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Erro no email !)"
-
+      mensagem_erro.innerHTML = "(Email inválido. Deve conter '@' e '.')";
       finalizarAguardar();
       return false;
 
-    }
-    else if (senhaVar == erroSenha) {
+    } else if (erroSenha) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Erro na Senha !)"
-
+      mensagem_erro.innerHTML = "(Senha inválida. Deve conter mais de 6 dígitos!)";
       finalizarAguardar();
       return false;
-  
-    }
-    else if (confirmacaoSenhaVar == erroSenhaConfirmacao) {
+
+    } else if (!senhaContemNumero) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Erro na confirmação de senha !)"
-
+      mensagem_erro.innerHTML = "(Senha inválida. Deve conter número!)";
       finalizarAguardar();
       return false;
 
-    }
-    
-    else {
+    } else if (erroSenhaConfirmacao) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML = "(Confirmação de senha inválida. Deve ser a mesma que a senha!)";
+      finalizarAguardar();
+      return false;
+
+    } else {
       setInterval(sumirMensagem, 5000);
+      // Chame a função de envio de dados, ex: enviarDados();
     }
-
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -202,8 +183,7 @@
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        // empresaServer: empresaVar,
-        // cpfServer: cpfVar
+
       }),
     })
       .then(function (resposta) {
