@@ -12,17 +12,17 @@ function buscarUltimasMedidas(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
-// function buscarMediaGeral(Quantidade) {
+function buscarMediaGeral(Quantidade) {
 
-//     console.log("ACESSEI a MEDIDA MODEL para buscar a media dos usuários, function buscarMediaGeral()", Quantidade);
+    console.log("ACESSEI a MEDIDA MODEL para buscar a media dos usuários, function buscarMediaGeral()", Quantidade);
 
-//     var instrucaoSql = `select 
-//     round(avg(q.score)) 'Quantidade'
-//     from tsound.quizz as q`;
+    var instrucaoSql = `select 
+    round(avg(q.score)) 'Quantidade'
+    from tsound.quizz as q`;
 
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
 // function buscarMedidasEmTempoReal(idAquario) {
 
@@ -39,8 +39,8 @@ function buscarUltimasMedidas(idUsuario) {
 // }
 
 module.exports = {
-    buscarUltimasMedidas
-    // buscarMediaGeral
+    buscarUltimasMedidas,
+    buscarMediaGeral
 }
 //     buscarMedidasEmTempoReal
 // }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    
+
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
@@ -27,67 +27,68 @@
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
+
 <body> <!-- para fazer o css -->
-    
-<body onload="validarSessao()">
 
-    <div class="janela">
-        <div class="header-left">
-            <h1>TSoundCloud</h1>
+    <body onload="validarSessao()">
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        <div class="janela">
+            <div class="header-left">
+                <h1>TSoundCloud</h1>
+
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./cards.html">
+                        <h3>Quizz</h3>
+                    </a>
+                </div>
+
+                <div class="btn-nav">
+                    <a href=""></a>
+                    <h3>Gráficos</h3>
+
+                </div>
+
+                <div class="btn-nav-white">
+                    <a href="./mural.html">
+                        <h3>Mural de Avisos</h3>
+                    </a>
+                </div>
+
+                <div class="btn-logout" onclick="limparSessao()">
+                    <h3>Sair</h3>
+                </div>
+
             </div>
 
-            <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Quizz</h3>
-                </a>
-            </div>
+            <div class="dash">
+                <div id="alerta">
+                </div>
 
-            <div class="btn-nav">
-                <a href=""></a>
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-logout" onclick="limparSessao()">
-                <h3>Sair</h3>
-            </div>
-
-        </div>
-
-        <div class="dash">
-            <div id="alerta">
-            </div>
-
-            <div class="btns-dash" id="btnAquario">
-                <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
-            </div>
-            <div class="todos-graficos">
-            <div id="graficos" class="graficoResultado">
-                <h1>Seus Acertos</h1>
-                <canvas style="background-color: white;" id="myChartCanvas"></canvas>
-            </div>
-            <div id="graficos" class="graficoResultado">
-                <h1>Acertos Gerais</h1>
-                <canvas style="background-color: white;" id="myChartCanvas"></canvas>
-            </div>
-        </div>
-            <!-- <div id="graficos" class="graficoResultadoGeral">
+                <div class="btns-dash" id="btnAquario">
+                    <!-- O gráfico é chamado de acordo com o id (fk_aquario) do banco  -->
+                </div>
+                <div class="todos-graficos">
+                    <div id="graficos" class="graficoResultado">
+                        <h1>Seus Acertos</h1>
+                        <canvas style="background-color: white;" id="myChartCanvas"></canvas>
+                    </div>
+                    <div id="graficos" class="graficoResultado">
+                        <h1>Acertos Gerais</h1>
+                        <canvas style="background-color: white;" id="myChartCanvasMediaGeral"></canvas>
+                    </div>
+                </div>
+                <!-- <div id="graficos" class="graficoResultadoGeral">
                 <canvas style="background-color: rgb(163, 116, 28);" id="myChartCanvas"></canvas>
             </div> -->
+            </div>
         </div>
-    </div>
 
 
-</body>
+    </body>
 
 </html>
 
@@ -99,7 +100,8 @@
     window.onload = exibirAquariosDoUsuario();
 
     function exibirAquariosDoUsuario() {
-        var usuario = sessionStorage.ID_USUARIO;
+        var idUsuario = sessionStorage.ID_USUARIO;
+
         // aquarios.forEach(item => {
         //     document.getElementById("btnAquario").innerHTML += `
         //     <button class="btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
@@ -119,13 +121,13 @@
         //         </div>
         //     `
 
-            obterDadosGrafico(usuario)
-        };
+        obterDadosGrafico(idUsuario)
+    };
 
     //     if (aquarios.length > 0) {
     //         exibirAquario(aquarios[0].id)
     //     }
-    
+
 
     // function alterarTitulo(idAquario) {
     //     var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
@@ -177,13 +179,14 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idUsuario) {
-    
+
         // alterarTitulo(idUsuario)
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
 
+        // fetch 1 usuario
         fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
@@ -200,11 +203,31 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+
+        // fetch mediaGeral
+        fetch(`/medidas/buscarMediaGeral/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (respostaMediaGeral) {
+                    console.log(`Dados recebidos media: ${JSON.stringify(respostaMediaGeral)}`);
+                    respostaMediaGeral.reverse();
+
+                    plotarMediaGeral(respostaMediaGeral, idUsuario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
 
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+
+    // graf para um usuario
     function plotarGrafico(resposta, idUsuario) {
 
         console.log('iniciando plotagem do gráfico...');
@@ -233,8 +256,8 @@
             var registro = resposta[i];
             // labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.score);
-        //     dados.datasets[1].data.push(registro.temperatura);
-         }
+            //     dados.datasets[1].data.push(registro.temperatura);
+        }
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -259,9 +282,64 @@
         // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
     }
 
+    // graf media geral
+    function plotarMediaGeral(respostaMediaGeral, idUsuario) {
+
+        console.log('iniciando plotagem do gráfico de media Geral...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = ["Media Geral"];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Media Geral',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(respostaMediaGeral)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < respostaMediaGeral.length; i++) {
+            var registro = respostaMediaGeral[i];
+            // labels.push(registro.momento_grafico);
+            dados.datasets[0].data.push(registro.Quantidade);
+            //     dados.datasets[1].data.push(registro.temperatura);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvasMediaGeral`),
+            config
+        );
+
+        // setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+    }
+
 
     // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
+    // buscando a última medida inserida em tabela contendo as capturas,
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
