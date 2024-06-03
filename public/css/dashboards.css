@@ -441,21 +441,31 @@ canvas {
   background-color: var(--TSound-4);
 }
 
-.graficoResultado{
-  display: flex;  
-  width: 300px;
 
-}
 
-.todos-graficos{
+.graficoResultadoPessoal{
+  margin: 10%;
   display: flex;
+  flex-direction: column;
   gap: 20%;
+  background-color: var(--TSound-6);
+  
+}
+
+.graficoResultadoGeral{
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20%;
+  background-color: var(--TSound-6);
+  
+  
 }
 
 
-.graficoResultado h1{
-color: var(--TSound-6);
-
+#graficos h1{
+color: var(--TSound-Neutro-1);
+display: flex;
 justify-content: center;
 }
 
