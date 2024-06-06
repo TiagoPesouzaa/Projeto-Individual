@@ -38,7 +38,7 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Quizz</h3>
+                <h3>Quiz</h3>
             </div>
 
             <div class="btn-nav-white">
@@ -49,7 +49,7 @@
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Área de Feedback</h3>
                 </a>
             </div>
 
@@ -65,13 +65,12 @@
                 <div id="quiz">
                     <div id="question">Carregando questão...</div>
                     <div id="options"></div>
-                    <!-- <button id="submitBtn">Próxima Questão</button> -->
                 </div>
                 <div id="result"></div>
             </div>
             <script>
                 const quizData = [
-                    // Século XIX
+                    
                     {
                         question: "Qual foi o instrumento precursor do violão moderno, popularizado no século XIX e conhecido por suas seis cordas de nylon?",
                         options: ["Bandolim", "Cavaquinho", "Viola caipira", "Viola espanhola"],
@@ -82,7 +81,7 @@
                         options: ["2011", "2009", "2012", "2008"],
                         answer: 1
                     },
-                    // Século XX
+                    
                     {
                         question: "Qual foi o movimento musical brasileiro que teve grande influência no desenvolvimento do violão brasileiro, especialmente na década de 1960?",
                         options: ["Bossa Nova", "Tropicália", "Samba", "Choro"],
@@ -93,7 +92,7 @@
                         options: ["Gianini", "C80", "C40", "C60"],
                         answer: 0
                     },
-                    // Século XXI
+                    
                     {
                         question: "Qual é o nome do projeto criado por Yamandu Costa que visa promover a educação musical e o ensino do violão em comunidades carentes?",
                         options: ["Projeto Guri", "Violão nas Escolas", "Violão Amigo", "Villa-Lobos Vive"],
@@ -101,7 +100,7 @@
                     },
                     {
                         question: "Qual é o estilo de música que marcou a minha vida?",
-                        options: ["Bossa Nova", "Forró", "Samba-Rock", "Música de Câmara"],
+                        options: ["Bossa Nova", "Samba", "Samba-Rock", "Música de Câmara"],
                         answer: 1
                     },
                     {
@@ -116,9 +115,6 @@
                     }
                 ];
 
-                // Restante do código JavaScript para o funcionamento do quiz...
-
-
                 const questionElement = document.getElementById("question");
                 const optionsElement = document.getElementById("options");
                 const resultElement = document.getElementById("result");
@@ -130,6 +126,7 @@
                 function loadQuestion() {
                     questionElement.textContent = quizData[currentQuestion].question;
                     optionsElement.innerHTML = "";
+
                     for (let i = 0; i < quizData[currentQuestion].options.length; i++) {
                         const option = document.createElement("div");
                         option.textContent = quizData[currentQuestion].options[i];
@@ -173,7 +170,7 @@
                             // Agora vá para o arquivo routes/usuario.js
                             scoreServer: score,
                             usuarioIdServer: idUsuario,
-                            
+
                             // empresaServer: empresaVar,
                             // cpfServer: cpfVar
                         }),
@@ -207,7 +204,7 @@
 
 
 
-                
+
 
                 loadQuestion();
             </script>

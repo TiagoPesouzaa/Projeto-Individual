@@ -18,8 +18,8 @@ body {
 }
 
 .dash-right .avisos {
-  width: 100%;
-  color: rgb(216, 216, 216);
+  width: 80%;
+  color: var(--TSound-1);
 
 }
 
@@ -27,6 +27,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 17%;
+  margin-top: 5%;
+  
+
+  
 }
 
 .dash-right .avisos .container .div-form {
@@ -66,7 +71,16 @@ body {
   color: white;
   background-color: var(--TSound-1);
   width: 120px;
-  justify-content: center;    
+  justify-content: center;  
+  margin-left: 40%;  
+
+  transition: ease-in-out .4s;
+}
+
+.dash-right .avisos .div-form button:hover{
+  background-color: #c4bda8;
+  color: #212124;
+  
 }
 
 .publicacao-btn-editar {
@@ -361,12 +375,12 @@ canvas {
 
 .dash-right {
   display: flex;
-  width: 70%;
+  width: 60%;
   height: fit-content;
   background-color: var(--TSound-4);
   position: relative;
   margin-top: 5%;
-  left: 25%;
+  left: 30%;
   height: 80vh;
   border: none;
   border-radius: 30px;
@@ -443,8 +457,7 @@ canvas {
 
 
 
-
-
+/* Graficos */
 .graficoResultadoPessoal{
   margin: 5%; 
   gap: 20%;

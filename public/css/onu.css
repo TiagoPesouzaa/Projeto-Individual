@@ -40,7 +40,7 @@ color: var(--TSound-6);
   
   .card {
     width: 200px;
-    height: 250px;
+    height: 200px;
     border: none;
     border-radius: 25px;
     background-color: var(--TSound-6);

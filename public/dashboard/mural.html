@@ -36,7 +36,7 @@
 
             <div class="btn-nav-white">
                 <a href="cards.html">
-                    <h3>Quizz</h3>
+                    <h3>Quiz</h3>
                 </a>
             </div>
 
@@ -47,7 +47,7 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Mural de Avisos</h3>
+                <h3>Área de Feedback</h3>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -110,6 +110,7 @@
 
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
+        var nomeUsuario = sessionStorage.NOME_USUARIO
 
         var corpo = {
             titulo: form_postagem.titulo.value,
@@ -127,7 +128,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.alert("Obrigado " + nomeUsuario + ", seu Feedback foi enviado com sucesso!");
                 window.location = "/dashboard/mural.html";
                 limparFormulario();
                 finalizarAguardar();
