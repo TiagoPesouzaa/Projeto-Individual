@@ -13,8 +13,14 @@ function prevSlide() {
 }
 
 function updateCarousel() {
+
+    // apenas pega o container do carrossel
     const carouselContent = document.querySelector('.carousel-content');
-    const slideWidth = carouselContent.offsetWidth; // Obtém a largura do contêiner do carrossel
+
+    // Obtém a largura do contêiner do carrossel
+    const slideWidth = carouselContent.offsetWidth; 
+
+    // move horizontalmente o carrosel
     carouselContent.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
 
     // Atualizar indicadores de slide

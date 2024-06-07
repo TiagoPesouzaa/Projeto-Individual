@@ -93,9 +93,6 @@
                         <canvas style="background-color: white;" id="myChartCanvasMediaGeral"></canvas>
                     </div>
                 </div>
-                <!-- <div id="graficos" class="graficoResultadoGeral">
-                <canvas style="background-color: rgb(163, 116, 28);" id="myChartCanvas"></canvas>
-            </div> -->
             </div>
         </div>
 
@@ -114,38 +111,8 @@
     function exibirAquariosDoUsuario() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
-        // aquarios.forEach(item => {
-        //     document.getElementById("btnAquario").innerHTML += `
-        //     <button class="btn-chart" onclick="exibirAquario(${item.id})" id="btnAquario${item.id}">${item.descricao}</button>
-        //     `
-
-        //     document.getElementById("graficos").innerHTML += `
-        //         <div id="grafico${item.id}" class="display-none">
-        //             <h3 class="tituloGraficos">
-        //                 <span id="tituloAquario${item.id}">${item.descricao}</span>
-        //             </h3>
-        //             <div class="graph">
-        //                 <canvas id="myChartCanvas${item.id}"></canvas>
-        //             </div>
-        //             <div class="label-captura">
-        //                 <p id="avisoCaptura${item.id}" style="color: white"></p>
-        //             </div>
-        //         </div>
-        //     `
-
         obterDadosGrafico(idUsuario)
     };
-
-    //     if (aquarios.length > 0) {
-    //         exibirAquario(aquarios[0].id)
-    //     }
-
-
-    // function alterarTitulo(idAquario) {
-    //     var tituloAquario = document.getElementById(`tituloAquario${idAquario}`)
-    //     var descricao = JSON.parse(sessionStorage.AQUARIOS).find(item => item.id == idAquario).descricao;
-    //     tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>" + descricao + "</span>"
-    // }
 
     function exibirAquario(idUsuario) {
         let todosOsGraficos = JSON.parse(sessionStorage.USUARIO);
@@ -158,13 +125,6 @@
                     elementoAtual.classList.remove("display-block")
                 }
                 elementoAtual.classList.add("display-none")
-
-                // alterando estilo do botão
-                // let btnAtual = document.getElementById(`btnAquario${todosOsGraficos[i].id}`)
-                // if (btnAtual.classList.contains("btn-pink")) {
-                //     btnAtual.classList.remove("btn-pink")
-                // }
-                // btnAtual.classList.add("btn-white")
             }
         }
 
@@ -172,11 +132,6 @@
         let graficoExibir = document.getElementById(`grafico${idUsuario}`)
         graficoExibir.classList.remove("display-none")
         graficoExibir.classList.add("display-block")
-
-        // alterando estilo do botão
-        // let btnExibir = document.getElementById(`btnAquario${idAquario}`)
-        // btnExibir.classList.remove("btn-white")
-        // btnExibir.classList.add("btn-pink")
     }
 
     // O gráfico é construído com três funções:
@@ -243,26 +198,6 @@
                 console.error('Nenhum dado encontrado ou erro na API');
             }
         })
-
-
-
-            // maior nota
-            // fetch(`/medidas/ultimas/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
-            //     if (response.ok) {
-            //         response.json().then(function (resposta) {
-            //             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            //             resposta.reverse();
-
-            //             plotarGrafico(resposta, idUsuario);
-
-            //         });
-            //     } else {
-            //         console.error('Nenhum dado encontrado ou erro na API');
-            //     }
-            // })
-
-
-
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
